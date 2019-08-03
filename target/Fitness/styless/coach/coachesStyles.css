@@ -1,0 +1,27 @@
+li.coach{
+    font: 20px 'Oswald', sans-serif;
+    color: black;
+}
+
+.li_button{
+    background-color: #29c5e6;
+    border-radius: 13px;
+}
+
+.textClass{
+    width: 100px;
+    color: black;
+    padding-top: 10px;
+    font: 16px 'Oswald', sans-serif;
+    color: black;
+}
+
+.textArea{
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    color: black;
+    width: 95%;
+    height: 280px;
+    border: 2px solid #29c5e6;
+    overflow-x: hidden;
+}

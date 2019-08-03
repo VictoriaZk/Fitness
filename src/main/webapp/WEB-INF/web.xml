@@ -1,0 +1,72 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>controller</servlet-name>
+        <servlet-class>com.epam.fitness.controller.Controller</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Ajaxcontroller</servlet-name>
+        <servlet-class>com.epam.fitness.controller.AjaxController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>controller</servlet-name>
+        <url-pattern>/controller</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Ajaxcontroller</servlet-name>
+        <url-pattern>/Ajaxcontroller</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <location>/WEB-INF/error/standardErrorPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/error/errorPage404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/error/errorPage500.jsp</location>
+    </error-page>
+
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <jsp-config>
+        <taglib>
+            <taglib-uri>fitnessTag</taglib-uri>
+            <taglib-location>/WEB-INF/tld/membershipTariifs.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
+    <filter>
+        <filter-name>languageFilter</filter-name>
+        <filter-class>com.epam.fitness.filter.LanguageFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>languageFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>commandTypeFilter</filter-name>
+        <filter-class>com.epam.fitness.filter.CommandTypeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>commandTypeFilter</filter-name>
+        <url-pattern>/controller</url-pattern>
+    </filter-mapping>
+
+
+
+</web-app>
